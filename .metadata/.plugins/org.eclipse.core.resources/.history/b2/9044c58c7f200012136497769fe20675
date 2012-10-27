@@ -1,0 +1,13 @@
+package com.example.cis;
+
+public interface ScanButtonInterface {
+	
+	void onFailure(){
+		
+	}
+	
+	void OnSuccces(){
+		
+	}
+}
+

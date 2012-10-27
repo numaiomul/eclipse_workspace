@@ -1,0 +1,30 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../lib/SRC/Gl/gsub.c \
+../lib/SRC/Gl/gsubUtil.c \
+../lib/SRC/Gl/gsub_lite.c 
+
+OBJS += \
+./lib/SRC/Gl/gsub.o \
+./lib/SRC/Gl/gsubUtil.o \
+./lib/SRC/Gl/gsub_lite.o 
+
+C_DEPS += \
+./lib/SRC/Gl/gsub.d \
+./lib/SRC/Gl/gsubUtil.d \
+./lib/SRC/Gl/gsub_lite.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+lib/SRC/Gl/%.o: ../lib/SRC/Gl/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross GCC Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

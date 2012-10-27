@@ -1,0 +1,135 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../lib/SRC/AR/arDetectMarker.c \
+../lib/SRC/AR/arDetectMarker2.c \
+../lib/SRC/AR/arGetCode.c \
+../lib/SRC/AR/arGetMarkerInfo.c \
+../lib/SRC/AR/arGetTransMat.c \
+../lib/SRC/AR/arGetTransMat2.c \
+../lib/SRC/AR/arGetTransMat3.c \
+../lib/SRC/AR/arGetTransMatCont.c \
+../lib/SRC/AR/arLabeling.c \
+../lib/SRC/AR/arUtil.c \
+../lib/SRC/AR/mAlloc.c \
+../lib/SRC/AR/mAllocDup.c \
+../lib/SRC/AR/mAllocInv.c \
+../lib/SRC/AR/mAllocMul.c \
+../lib/SRC/AR/mAllocTrans.c \
+../lib/SRC/AR/mAllocUnit.c \
+../lib/SRC/AR/mDet.c \
+../lib/SRC/AR/mDisp.c \
+../lib/SRC/AR/mDup.c \
+../lib/SRC/AR/mFree.c \
+../lib/SRC/AR/mInv.c \
+../lib/SRC/AR/mMul.c \
+../lib/SRC/AR/mPCA.c \
+../lib/SRC/AR/mSelfInv.c \
+../lib/SRC/AR/mTrans.c \
+../lib/SRC/AR/mUnit.c \
+../lib/SRC/AR/paramChangeSize.c \
+../lib/SRC/AR/paramDecomp.c \
+../lib/SRC/AR/paramDisp.c \
+../lib/SRC/AR/paramDistortion.c \
+../lib/SRC/AR/paramFile.c \
+../lib/SRC/AR/paramGet.c \
+../lib/SRC/AR/vAlloc.c \
+../lib/SRC/AR/vDisp.c \
+../lib/SRC/AR/vFree.c \
+../lib/SRC/AR/vHouse.c \
+../lib/SRC/AR/vInnerP.c \
+../lib/SRC/AR/vTridiag.c 
+
+OBJS += \
+./lib/SRC/AR/arDetectMarker.o \
+./lib/SRC/AR/arDetectMarker2.o \
+./lib/SRC/AR/arGetCode.o \
+./lib/SRC/AR/arGetMarkerInfo.o \
+./lib/SRC/AR/arGetTransMat.o \
+./lib/SRC/AR/arGetTransMat2.o \
+./lib/SRC/AR/arGetTransMat3.o \
+./lib/SRC/AR/arGetTransMatCont.o \
+./lib/SRC/AR/arLabeling.o \
+./lib/SRC/AR/arUtil.o \
+./lib/SRC/AR/mAlloc.o \
+./lib/SRC/AR/mAllocDup.o \
+./lib/SRC/AR/mAllocInv.o \
+./lib/SRC/AR/mAllocMul.o \
+./lib/SRC/AR/mAllocTrans.o \
+./lib/SRC/AR/mAllocUnit.o \
+./lib/SRC/AR/mDet.o \
+./lib/SRC/AR/mDisp.o \
+./lib/SRC/AR/mDup.o \
+./lib/SRC/AR/mFree.o \
+./lib/SRC/AR/mInv.o \
+./lib/SRC/AR/mMul.o \
+./lib/SRC/AR/mPCA.o \
+./lib/SRC/AR/mSelfInv.o \
+./lib/SRC/AR/mTrans.o \
+./lib/SRC/AR/mUnit.o \
+./lib/SRC/AR/paramChangeSize.o \
+./lib/SRC/AR/paramDecomp.o \
+./lib/SRC/AR/paramDisp.o \
+./lib/SRC/AR/paramDistortion.o \
+./lib/SRC/AR/paramFile.o \
+./lib/SRC/AR/paramGet.o \
+./lib/SRC/AR/vAlloc.o \
+./lib/SRC/AR/vDisp.o \
+./lib/SRC/AR/vFree.o \
+./lib/SRC/AR/vHouse.o \
+./lib/SRC/AR/vInnerP.o \
+./lib/SRC/AR/vTridiag.o 
+
+C_DEPS += \
+./lib/SRC/AR/arDetectMarker.d \
+./lib/SRC/AR/arDetectMarker2.d \
+./lib/SRC/AR/arGetCode.d \
+./lib/SRC/AR/arGetMarkerInfo.d \
+./lib/SRC/AR/arGetTransMat.d \
+./lib/SRC/AR/arGetTransMat2.d \
+./lib/SRC/AR/arGetTransMat3.d \
+./lib/SRC/AR/arGetTransMatCont.d \
+./lib/SRC/AR/arLabeling.d \
+./lib/SRC/AR/arUtil.d \
+./lib/SRC/AR/mAlloc.d \
+./lib/SRC/AR/mAllocDup.d \
+./lib/SRC/AR/mAllocInv.d \
+./lib/SRC/AR/mAllocMul.d \
+./lib/SRC/AR/mAllocTrans.d \
+./lib/SRC/AR/mAllocUnit.d \
+./lib/SRC/AR/mDet.d \
+./lib/SRC/AR/mDisp.d \
+./lib/SRC/AR/mDup.d \
+./lib/SRC/AR/mFree.d \
+./lib/SRC/AR/mInv.d \
+./lib/SRC/AR/mMul.d \
+./lib/SRC/AR/mPCA.d \
+./lib/SRC/AR/mSelfInv.d \
+./lib/SRC/AR/mTrans.d \
+./lib/SRC/AR/mUnit.d \
+./lib/SRC/AR/paramChangeSize.d \
+./lib/SRC/AR/paramDecomp.d \
+./lib/SRC/AR/paramDisp.d \
+./lib/SRC/AR/paramDistortion.d \
+./lib/SRC/AR/paramFile.d \
+./lib/SRC/AR/paramGet.d \
+./lib/SRC/AR/vAlloc.d \
+./lib/SRC/AR/vDisp.d \
+./lib/SRC/AR/vFree.d \
+./lib/SRC/AR/vHouse.d \
+./lib/SRC/AR/vInnerP.d \
+./lib/SRC/AR/vTridiag.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+lib/SRC/AR/%.o: ../lib/SRC/AR/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross GCC Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

@@ -1,0 +1,29 @@
+package com.example.cis;
+
+import com.google.zxing.integration.android.IntentIntegrator;
+
+import android.content.Context;
+import android.net.wifi.p2p.WifiP2pManager.ActionListener;
+import android.widget.Toast;
+import com.example.cis.MainActivity;
+public class ScanButton implements ActionListener {
+	Activity mainActivityRef = 
+
+	public void onFailure(int arg0) {
+		
+		Context context = getApplicationContext();
+		CharSequence text = "ScanButton Error";
+		int duration = Toast.LENGTH_SHORT;
+		  
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();	
+	}
+
+	public void onSuccess() {
+        IntentIntegrator integrator = new IntentIntegrator();
+
+        integrator.initiateScan();
+	}
+	
+
+}

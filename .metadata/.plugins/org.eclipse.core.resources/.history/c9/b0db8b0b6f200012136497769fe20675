@@ -1,0 +1,33 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../examples/paddleDemo/command_sub.c \
+../examples/paddleDemo/paddle.c \
+../examples/paddleDemo/paddleDemo.c \
+../examples/paddleDemo/util.c 
+
+OBJS += \
+./examples/paddleDemo/command_sub.o \
+./examples/paddleDemo/paddle.o \
+./examples/paddleDemo/paddleDemo.o \
+./examples/paddleDemo/util.o 
+
+C_DEPS += \
+./examples/paddleDemo/command_sub.d \
+./examples/paddleDemo/paddle.d \
+./examples/paddleDemo/paddleDemo.d \
+./examples/paddleDemo/util.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+examples/paddleDemo/%.o: ../examples/paddleDemo/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross GCC Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

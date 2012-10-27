@@ -1,0 +1,27 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../lib/SRC/ARvrml/arViewer.cpp \
+../lib/SRC/ARvrml/arViewerCapi.cpp 
+
+OBJS += \
+./lib/SRC/ARvrml/arViewer.o \
+./lib/SRC/ARvrml/arViewerCapi.o 
+
+CPP_DEPS += \
+./lib/SRC/ARvrml/arViewer.d \
+./lib/SRC/ARvrml/arViewerCapi.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+lib/SRC/ARvrml/%.o: ../lib/SRC/ARvrml/%.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross G++ Compiler'
+	g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

@@ -1,0 +1,6 @@
+22:55:44 **** Incremental Build of configuration Default for project ARToolKit ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+
+22:55:44 Build Finished (took 15ms)
+

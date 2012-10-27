@@ -1,0 +1,27 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../util/calib_distortion/calib_dist.c \
+../util/calib_distortion/check_dist.c 
+
+OBJS += \
+./util/calib_distortion/calib_dist.o \
+./util/calib_distortion/check_dist.o 
+
+C_DEPS += \
+./util/calib_distortion/calib_dist.d \
+./util/calib_distortion/check_dist.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+util/calib_distortion/%.o: ../util/calib_distortion/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross GCC Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

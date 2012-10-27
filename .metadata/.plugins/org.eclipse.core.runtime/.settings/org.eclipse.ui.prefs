@@ -1,0 +1,4 @@
+ENABLE_ANIMATIONS=false
+eclipse.preferences.version=1
+org.eclipse.sequoyah.android.cdt.build.ui.ndkpath=F\:\\android-ndk-r8b
+showIntro=false

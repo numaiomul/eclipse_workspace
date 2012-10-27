@@ -1,0 +1,12 @@
+package com.example.cis;
+
+public class TextGiver {
+	public static native void GiveText();
+	
+	
+	static{
+		System.loadLibrary("textGiver");
+		
+		
+	}
+}

@@ -1,0 +1,27 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../examples/loadMultiple/loadMultiple.c \
+../examples/loadMultiple/object.c 
+
+OBJS += \
+./examples/loadMultiple/loadMultiple.o \
+./examples/loadMultiple/object.o 
+
+C_DEPS += \
+./examples/loadMultiple/loadMultiple.d \
+./examples/loadMultiple/object.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+examples/loadMultiple/%.o: ../examples/loadMultiple/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross GCC Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

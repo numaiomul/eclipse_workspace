@@ -1,0 +1,30 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../examples/modeTest/draw_object.c \
+../examples/modeTest/modeTest.c \
+../examples/modeTest/object.c 
+
+OBJS += \
+./examples/modeTest/draw_object.o \
+./examples/modeTest/modeTest.o \
+./examples/modeTest/object.o 
+
+C_DEPS += \
+./examples/modeTest/draw_object.d \
+./examples/modeTest/modeTest.d \
+./examples/modeTest/object.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+examples/modeTest/%.o: ../examples/modeTest/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross GCC Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

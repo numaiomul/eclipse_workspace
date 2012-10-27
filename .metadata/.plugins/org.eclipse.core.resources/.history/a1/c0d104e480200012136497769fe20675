@@ -1,0 +1,24 @@
+package com.example.cis;
+
+import android.content.Context;
+
+
+import com.google.zxing.integration.android.IntentIntegrator;
+
+public class ScanButtonListener extends ActionEvent {
+           
+	public void onSuccces() {
+        IntentIntegrator integrator = new IntentIntegrator(myActivity);
+        integrator.initiateScan();
+	}
+       
+	public void onFailure() {
+		Context context = getApplicationContext();
+    	CharSequence text = "ScanButton Error";
+    	int duration = Toast.LENGTH_SHORT;
+    	  
+    	Toast toast = Toast.makeText(context, text, duration);
+    	toast.show();
+	}
+
+}

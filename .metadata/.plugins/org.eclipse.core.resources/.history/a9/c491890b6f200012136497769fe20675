@@ -1,0 +1,30 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+../examples/optical/draw_object.c \
+../examples/optical/object.c \
+../examples/optical/optical.c 
+
+OBJS += \
+./examples/optical/draw_object.o \
+./examples/optical/object.o \
+./examples/optical/optical.o 
+
+C_DEPS += \
+./examples/optical/draw_object.d \
+./examples/optical/object.d \
+./examples/optical/optical.d 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+examples/optical/%.o: ../examples/optical/%.c
+	@echo 'Building file: $<'
+	@echo 'Invoking: Cross GCC Compiler'
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

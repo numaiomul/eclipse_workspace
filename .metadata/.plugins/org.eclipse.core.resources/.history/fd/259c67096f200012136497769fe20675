@@ -1,0 +1,61 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+O_SRCS := 
+CPP_SRCS := 
+C_UPPER_SRCS := 
+C_SRCS := 
+S_UPPER_SRCS := 
+OBJ_SRCS := 
+ASM_SRCS := 
+CXX_SRCS := 
+C++_SRCS := 
+CC_SRCS := 
+C++_DEPS := 
+OBJS := 
+C_DEPS := 
+CC_DEPS := 
+LIBRARIES := 
+CPP_DEPS := 
+CXX_DEPS := 
+C_UPPER_DEPS := 
+
+# Every subdirectory with source files must be described here
+SUBDIRS := \
+util/videoTest \
+util/mk_patt \
+util/graphicsTest \
+util/calib_distortion \
+util/calib_cparam \
+util/calib_camera2 \
+lib/SRC/VideoWin32DirectShow \
+lib/SRC/VideoWin32.DEPRECATED \
+lib/SRC/VideoSGI \
+lib/SRC/VideoMacOSX \
+lib/SRC/VideoLinuxV4L \
+lib/SRC/VideoLinuxDV \
+lib/SRC/VideoLinux1394Cam \
+lib/SRC/VideoGStreamer \
+lib/SRC/Gl \
+lib/SRC/ARvrml \
+lib/SRC/ARMulti \
+lib/SRC/AR \
+examples/twoView \
+examples/simpleVRML \
+examples/simpleLite \
+examples/simple2 \
+examples/simple \
+examples/relation \
+examples/range \
+examples/paddleInteraction \
+examples/paddleDemo \
+examples/paddle \
+examples/optical \
+examples/multi \
+examples/modeTest \
+examples/loadMultiple \
+examples/exview \
+examples/collide \
+bin/Data/multi \
+
