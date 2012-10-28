@@ -1,6 +1,6 @@
-05:17:42 **** Build of configuration Default for project CIS ****
+06:19:54 **** Incremental Build of configuration Default for project CIS ****
 ndk-build V=1 
 Cannot run program "ndk-build": Launching failed
 
-05:17:43 Build Finished (took 547ms)
+06:19:55 Build Finished (took 906ms)
 

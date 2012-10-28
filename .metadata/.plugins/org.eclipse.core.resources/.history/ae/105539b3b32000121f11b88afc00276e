@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -61,15 +60,14 @@ public class MainActivity extends Activity {
     	     Log.d(TAG,"WE BE HERE NOW!!!");
     	     Intent tempIntent = new Intent();
     	     tempIntent.setClass(getApplicationContext(), LoadingActivity.class);
+    	     Log.d(TAG,"Last line of code.tempIntent:"+tempIntent.toString());
+    	     tempIntent.addFlags(FLAG_ACTIVITY_NEW_TASK);
     	     Context myContext = this.getApplicationContext();    	     
-    	     myContext.startActivity(tempIntent); 
-       }
+    	     myContext.startActivity(tempIntent);
+   
+    	   }
     	  
   }
-
-    
-    
-
 }
     	
 

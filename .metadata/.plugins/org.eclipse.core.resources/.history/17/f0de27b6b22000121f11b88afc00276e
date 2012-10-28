@@ -12,14 +12,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	@SuppressWarnings("unused")
 	private String SSHString = "";
 	public final Activity myActivity = this;
-	
+	public final Context myContext = this.getApplicationContext();
 	private final String TAG = "<<MainActivity";
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,15 +60,12 @@ public class MainActivity extends Activity {
     	     Log.d(TAG,"WE BE HERE NOW!!!");
     	     Intent tempIntent = new Intent();
     	     tempIntent.setClass(getApplicationContext(), LoadingActivity.class);
-    	     Context myContext = this.getApplicationContext();    	     
-    	     myContext.startActivity(tempIntent); 
-       }
+    	     Log.d(TAG,"Last line of code.tempIntent:"+tempIntent.toString());
+    	     myContext.startActivity(tempIntent);
+   
+    	   }
     	  
   }
-
-    
-    
-
 }
     	
 

@@ -77,7 +77,7 @@ public class LoadingActivity extends Activity{
 	     Intent tempIntent = new Intent();
 	     tempIntent.setClass(this, RestaurantActivity.class);
 	     Log.d(TAG,"We be here");
-	     getApplicationContext().startActivity(tempIntent);
+	     startActivity(tempIntent);
 		 
     }
 }

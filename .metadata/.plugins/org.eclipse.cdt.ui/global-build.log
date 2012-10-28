@@ -97,3 +97,33 @@ Cannot run program "ndk-build": Launching failed
 05:17:42 **** Build of configuration Default for project CIS ****
 ndk-build V=1 
 Cannot run program "ndk-build": Launching failed
+05:27:55 **** Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+05:47:36 **** Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+05:48:03 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+05:50:33 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+05:50:48 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+05:51:37 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+05:58:18 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+06:00:42 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+06:05:35 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
+06:19:54 **** Incremental Build of configuration Default for project CIS ****
+ndk-build V=1 
+Cannot run program "ndk-build": Launching failed
