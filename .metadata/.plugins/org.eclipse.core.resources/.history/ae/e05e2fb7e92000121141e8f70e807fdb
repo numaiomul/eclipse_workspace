@@ -1,0 +1,29 @@
+package com.example.cis;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class RestaurantActivity extends Activity {
+	private final String TAG = "<<RestaurantActivity";
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.restaurant_menu);
+		
+		TextView RestaurantName = (TextView)findViewById(R.id.restaurantName);
+		RestaurantName.setText(RestaurantInfo.restaurantName);
+		
+		Button[] buttonArray = (Button[]) findView
+		
+		for (int i=0;i<RestaurantInfo.numberOfProducts;i++){
+			
+			
+		}
+		
+		
+	}
+	
+
+
+}

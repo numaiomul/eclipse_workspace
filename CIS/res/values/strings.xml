@@ -6,4 +6,6 @@
     <string name="title_activity_main">CIS</string>
     <string name="button">Scan</string>
     <string name="loading">Waiting response from server...</string>
+    <string name="checkout">Check-Out</string>
+    
 </resources>

@@ -2,6 +2,7 @@ package com.example.cis;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import android.os.Bundle;
 import android.os.Looper;
@@ -16,6 +17,7 @@ import org.json.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -31,58 +33,84 @@ public class LoadingActivity extends Activity{
 	public void onCreate (Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loading_scene);
-
-		/*
-		// api/services/list/provider_id 
-//		Thread t = new Thread(){
-//			public void run() {
-//                Looper.prepare(); //For Preparing Message Pool for the child Thread
-//                HttpClient client = new DefaultHttpClient();
-//                HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
-//                HttpResponse response;
-//                JSONObject json = new JSONObject();
-//                try{
-//                    HttpPost post = new HttpPost(null);//TODO: introduce proper url
-//                    json.put("SSH", RestaurantInfo.SSH);
-//                    StringEntity se = new StringEntity( json.toString());  
-//                    se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-//                    post.setEntity(se);
-//                    response = client.execute(post);
-//                    /*Checking response *//*
-//                    if(response!=null){
-//                        InputStream in = response.getEntity().getContent(); //Get the data in the entity
-//
-//                    }
-//                catch(Exception e){
-//                    e.printStackTrace();
-//                    Log.d("Error", "Cannot Estabilish Connection");
-//                }
-//                Looper.loop(); //Loop in the message queue
-//            }
-//		  };
-//		};
-//        t.start();   */
-		//TODO:JSON Parser
-		//** Hardcoding restaurant class to create restaurant interface and basic program prototype
 		
+		
+		JSONObject jsonObject;
+		try {
+			jsonObject = getResponse("http://cis-cloud.azurewebsites.net/api/authentication/1");/*+RestaurantInfo.MarkerID);*/
+					
+			RestaurantInfo.HotspotID=jsonObject.getInt("HotspotId");
+			RestaurantInfo.OrderID=jsonObject.getInt("OrderId");
+			RestaurantInfo.ProviderID=jsonObject.getInt("ProviderId");
+			
+		JSONArray jsonArray = getArrayResponse("http://cis-cloud.azurewebsites.net/api/services/list/"+RestaurantInfo.ProviderID);
+		
+		RestaurantInfo.productsList = RestaurantInfo.setMockList();
+		int i =0;
+		for(i = 0;;i++){
+			try
+			{
+				JSONObject service = jsonArray.getJSONObject(i);
+				ProductInfo tempProduct = new ProductInfo();
+				tempProduct.setName(service.getString("Name"));
+				tempProduct.setId(service.getInt("Id"));
+				tempProduct.setPrice((float)service.getDouble("Price"));
+				RestaurantInfo.productsList.add(tempProduct);
+				RestaurantInfo.numberOfProducts++;
+			}
+			catch(JSONException e) {
+				break;
+			}
+		}
+		
+		}
+		catch(Exception e){}
+		
+		 RestaurantInfo.restaurantName="CIS Burger";
 
-		 RestaurantInfo.restaurantName="McConalds";
-		 RestaurantInfo.numberOfProducts=3;
-		 RestaurantInfo.productsList = RestaurantInfo.setMockList();
-		 for(int i=0; i<RestaurantInfo.numberOfProducts; i++){
-			 final ProductInfo tempProduct = new ProductInfo(32,43,"Mancare",2.5f);
-			/*
-			 tempProduct.setId(32);
-			 tempProduct.setProviderId(43);
-			 tempProduct.setName("Mancare");
-			 tempProduct.setPrice(2.5f);*/
-			 
-			 RestaurantInfo.productsList.add(tempProduct);
-		 }
-		 //**Hardcoding finished
 		 
 		 Intent tempIntent = new Intent(this,RestaurantActivity.class);
 		 startActivity(tempIntent);
 	   
     }
+	public JSONObject getResponse(String url) throws JSONException{
+		String jsonString=null;
+		
+		  try {
+		    HttpClient httpclient = new DefaultHttpClient();
+		    HttpResponse response = httpclient.execute(new HttpGet(url));
+		    jsonString=decodeResponse(new InputStreamReader(response.getEntity().getContent()));
+		    
+		    }
+		  catch (Exception e) {
+		    Log.d(TAG, "Network exception"+ e);
+		  }
+		  
+		return new JSONObject(jsonString);
+	}
+	public JSONArray getArrayResponse(String url) throws JSONException{
+		String jsonString=null;
+		
+		  try {
+		    HttpClient httpclient = new DefaultHttpClient();
+		    HttpResponse response = httpclient.execute(new HttpGet(url));
+		    jsonString=decodeResponse(new InputStreamReader(response.getEntity().getContent()));
+		    
+		    }
+		  catch (Exception e) {
+		    Log.d(TAG, "Network exception"+ e);
+		  }
+		  
+		return new JSONArray(jsonString);
+	}
+	
+	public String decodeResponse( InputStreamReader codedResponse) throws IOException{
+		 StringBuilder decodedResponse=new StringBuilder();
+		 int tempVar = 0; 
+		 while(tempVar != -1){
+			 tempVar=codedResponse.read();
+			 decodedResponse.append((char)tempVar);
+		 } 
+		return decodedResponse.toString();
+	}
 }

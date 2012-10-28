@@ -1,0 +1,33 @@
+package com.example.cis;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class RestaurantActivity extends Activity {
+	private final String TAG = "<<RestaurantActivity";
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.restaurant_menu);
+		
+		TextView RestaurantName = (TextView)findViewById(R.id.restaurantName);
+		RestaurantName.setText(RestaurantInfo.restaurantName);
+		
+		Button[] buttonArray = null;
+		
+		for (int i=0;i<8;i++){
+			buttonArray[i] = (Button) findViewById(2131165189+i); // replaced R.id.button0 so I can assign all button in just one for
+			if(i>=RestaurantInfo.numberOfProducts)
+			{
+				buttonArray[i].setVisibility(VIEW.INVISIBLE);
+				
+			}
+		}
+		
+		
+	}
+	
+
+
+}

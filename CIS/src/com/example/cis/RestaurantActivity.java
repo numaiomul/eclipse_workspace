@@ -1,35 +1,66 @@
 package com.example.cis;
 
+import java.io.IOException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class RestaurantActivity extends Activity {
 	private final String TAG = "<<RestaurantActivity";
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		Log.d(TAG,"here be oncreate. ProductList: "+RestaurantInfo.productsList.toString());
 		setContentView(R.layout.restaurant_menu);
-		//for (int i=0;i<RestaurantInfo.numberOfProducts;i++){
-		TextView productName = (TextView)findViewById(R.id.productName1);
-		TextView productPrice = (TextView)findViewById(R.id.productPrice1);
-		productName.setText(RestaurantInfo.productsList.get(0).getName());
-		productPrice.setText(Float.toString((RestaurantInfo.productsList.get(0).getPrice())));
 		
-		productName = (TextView)findViewById(R.id.productName2);
-		productPrice = (TextView)findViewById(R.id.productPrice2);
-		productName.setText(RestaurantInfo.productsList.get(1).getName());
-		productPrice.setText(Float.toString((RestaurantInfo.productsList.get(1).getPrice())));
+		TextView RestaurantName = (TextView)findViewById(R.id.restaurantName);
+		RestaurantName.setText(RestaurantInfo.restaurantName);
 		
-		productName = (TextView)findViewById(R.id.productName3);
-		productPrice = (TextView)findViewById(R.id.productPrice3);
-		productName.setText(RestaurantInfo.productsList.get(2).getName());
-		productPrice.setText(Float.toString((RestaurantInfo.productsList.get(2).getPrice())));
+		Button[] buttonArray = new Button[8];
+		
+		for (int i=0;i<8;i++){
+			buttonArray[i] = (Button) findViewById(2131165189+i); // replaced R.id.button0 so I can assign all button in just one for
+			if(i>=RestaurantInfo.numberOfProducts)
+			{
+				buttonArray[i].setVisibility(View.INVISIBLE);
+			}
+			else
+			{
+				buttonArray[i].setText(RestaurantInfo.productsList.get(i).getName()+"        "+RestaurantInfo.productsList.get(i).getPrice());
+				buttonArray[i].setOnClickListener(mScanButtonEvent);
+			}
+		}
 		
 		
 	}
 	
+	 private OnClickListener mScanButtonEvent = new OnClickListener() {
+	    	public void onClick(View v) {
+	    		HttpClient httpclient = new DefaultHttpClient();
+			    try {
+					HttpPost tempVar = new HttpPost("http://cis-cloud.azurewebsites.net/api/services/order");
+					HttpResponse response = httpclient.execute(tempVar);
+					StringEntity se = new StringEntity("{\"OrderId\":10}");
+					
+			    } catch (ClientProtocolException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    	}
+	    };
 
 
 }

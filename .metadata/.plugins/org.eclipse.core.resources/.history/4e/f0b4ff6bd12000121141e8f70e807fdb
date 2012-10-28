@@ -1,0 +1,49 @@
+package com.example.cis;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class RestaurantActivity extends Activity {
+	private final String TAG = "<<RestaurantActivity";
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.restaurant_menu);
+		
+		TextView RestaurantName = (TextView)findViewById(R.id.restaurantName);
+		RestaurantName.setText(RestaurantInfo.restaurantName);
+	
+		ArrayList <View> listViewChildren = new View(this);
+		ListView productList = (ListView) findViewById(R.id.listView1);
+		productList.setTextFilterEnabled(true);
+		productList.addChildrenForAccessibility()
+		
+		for (int i=0;i<RestaurantInfo.numberOfProducts;i++){
+			productList.
+			
+		}
+		
+			
+		productList.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+			    // When clicked, show a toast with the TextView text
+			    Toast.makeText(getApplicationContext(),
+				((TextView) view).getText(), Toast.LENGTH_SHORT).show();
+			}
+		});
+		
+		
+		
+	}
+	
+
+
+}

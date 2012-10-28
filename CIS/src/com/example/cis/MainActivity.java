@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
     	   IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
     	   if (scanResult != null) {
-    	     RestaurantInfo.SSH = scanResult.getContents();
+    	     RestaurantInfo.MarkerID = scanResult.getContents();
     	   
     	     Context context = getApplicationContext();
     	     CharSequence text = scanResult.getContents();
