@@ -1,9 +1,9 @@
 package com.example.cis;
 
+/**
+ * Product info class. Every product will have these variables.
+ */
 public class ProductInfo {
-	/**
-	 * Product info class. Every product will have these variables.
-	 */
     private int Id ;
     private int ProviderId ;
     private String Name ;
@@ -33,5 +33,14 @@ public class ProductInfo {
 	public void setPrice(float price) {
 		Price = price;
 	}
+	public ProductInfo(int Id, int ProviderId, String Name, float Price){
+		this.Id=Id;
+		this.ProviderId=ProviderId;
+		this.Name=Name;
+		this.Price=Price;
+	}
+	public ProductInfo (){
 		
+	}
+	
 }

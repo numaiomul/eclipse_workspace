@@ -1,0 +1,15 @@
+package com.example.cis;
+
+import java.util.List;
+
+public class RestaurantInfo extends ProductInfo {
+	/**
+	 * Class to store restaurant information. It is made static because the 
+	 * application is not intended to show information for multiple restaurants.
+	 */
+	public static String SSH = "";
+	public static String restaurantName = "";
+	public static int numberOfProducts = 0;
+	public static List<ProductInfo> productsList; 
+
+}

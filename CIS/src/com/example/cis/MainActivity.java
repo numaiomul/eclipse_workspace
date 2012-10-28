@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -59,10 +58,8 @@ public class MainActivity extends Activity {
     	     Toast toast = Toast.makeText(context, text, duration);
     	     toast.show();  
     	     Log.d(TAG,"WE BE HERE NOW!!!");
-    	     Intent tempIntent = new Intent();
-    	     tempIntent.setClass(getApplicationContext(), LoadingActivity.class);
-    	     Context myContext = this.getApplicationContext();    	     
-    	     myContext.startActivity(tempIntent); 
+    	     Intent tempIntent = new Intent(this, LoadingActivity.class);
+    	     startActivity(tempIntent);
        }
     	  
   }

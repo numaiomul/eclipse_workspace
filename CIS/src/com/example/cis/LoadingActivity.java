@@ -28,56 +28,61 @@ import org.apache.http.util.EntityUtils;
 public class LoadingActivity extends Activity{
 	private final String TAG = "<<LoadingActivity";
 	
-	public void onCreate (){
-		Log.d(TAG,"beggining of create");
-		 setContentView(R.layout.loading_scene);
+	public void onCreate (Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.loading_scene);
+
 		/*
 		// api/services/list/provider_id 
-		Thread t = new Thread(){
-			public void run() {
-                Looper.prepare(); //For Preparing Message Pool for the child Thread
-                HttpClient client = new DefaultHttpClient();
-                HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
-                HttpResponse response;
-                JSONObject json = new JSONObject();
-                try{
-                    HttpPost post = new HttpPost(null);//TODO: introduce proper url
-                    json.put("SSH", RestaurantInfo.SSH);
-                    StringEntity se = new StringEntity( json.toString());  
-                    se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-                    post.setEntity(se);
-                    response = client.execute(post);
-                    /*Checking response *//*
-                    if(response!=null){
-                        InputStream in = response.getEntity().getContent(); //Get the data in the entity
-
-                    }
-                catch(Exception e){
-                    e.printStackTrace();
-                    Log.d("Error", "Cannot Estabilish Connection");
-                }
-                Looper.loop(); //Loop in the message queue
-            }
-		  };
-		};
-        t.start();   */
+//		Thread t = new Thread(){
+//			public void run() {
+//                Looper.prepare(); //For Preparing Message Pool for the child Thread
+//                HttpClient client = new DefaultHttpClient();
+//                HttpConnectionParams.setConnectionTimeout(client.getParams(), 10000); //Timeout Limit
+//                HttpResponse response;
+//                JSONObject json = new JSONObject();
+//                try{
+//                    HttpPost post = new HttpPost(null);//TODO: introduce proper url
+//                    json.put("SSH", RestaurantInfo.SSH);
+//                    StringEntity se = new StringEntity( json.toString());  
+//                    se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+//                    post.setEntity(se);
+//                    response = client.execute(post);
+//                    /*Checking response *//*
+//                    if(response!=null){
+//                        InputStream in = response.getEntity().getContent(); //Get the data in the entity
+//
+//                    }
+//                catch(Exception e){
+//                    e.printStackTrace();
+//                    Log.d("Error", "Cannot Estabilish Connection");
+//                }
+//                Looper.loop(); //Loop in the message queue
+//            }
+//		  };
+//		};
+//        t.start();   */
 		//TODO:JSON Parser
 		//** Hardcoding restaurant class to create restaurant interface and basic program prototype
+		
+
 		 RestaurantInfo.restaurantName="McConalds";
 		 RestaurantInfo.numberOfProducts=3;
+		 RestaurantInfo.productsList = RestaurantInfo.setMockList();
 		 for(int i=0; i<RestaurantInfo.numberOfProducts; i++){
-			 ProductInfo tempProduct = null;
+			 final ProductInfo tempProduct = new ProductInfo(32,43,"Mancare",2.5f);
+			/*
 			 tempProduct.setId(32);
 			 tempProduct.setProviderId(43);
 			 tempProduct.setName("Mancare");
-			 tempProduct.setPrice(2.5f);
+			 tempProduct.setPrice(2.5f);*/
+			 
 			 RestaurantInfo.productsList.add(tempProduct);
 		 }
 		 //**Hardcoding finished
-	     Intent tempIntent = new Intent();
-	     tempIntent.setClass(this, RestaurantActivity.class);
-	     Log.d(TAG,"We be here");
-	     getApplicationContext().startActivity(tempIntent);
 		 
+		 Intent tempIntent = new Intent(this,RestaurantActivity.class);
+		 startActivity(tempIntent);
+	   
     }
 }

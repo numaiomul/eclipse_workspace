@@ -39,8 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoadingActivity" ></activity>
-        <activity android:name=".RestaurantActivity"></activity>
+        <activity android:name=".LoadingActivity" android:launchMode="singleTop"></activity>
+        <activity android:name=".RestaurantActivity" android:allowTaskReparenting="true" android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>
