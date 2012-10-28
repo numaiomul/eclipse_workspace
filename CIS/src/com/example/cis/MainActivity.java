@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,22 +15,25 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	private String outputText = "";
+	@SuppressWarnings("unused")
+	private String SSHString = "";
 	public final Activity myActivity = this;
-	public final Context myContext = this.getApplicationContext();
 	
+	private final String TAG = "<<MainActivity";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG,"here be beggining");
         setContentView(R.layout.activity_main);
         Button scanButton = (Button) findViewById(R.id.scanButton);
        	scanButton.setOnClickListener(mScanButtonEvent);
         
         }
 
+    IntentIntegrator integrator = new IntentIntegrator(myActivity);
+    
     private OnClickListener mScanButtonEvent = new OnClickListener() {
     	public void onClick(View v) {
-    		IntentIntegrator integrator = new IntentIntegrator(myActivity);
     		integrator.initiateScan();
     	}
     };
@@ -45,7 +49,7 @@ public class MainActivity extends Activity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
     	   IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
     	   if (scanResult != null) {
-    	     outputText = scanResult.getContents();
+    	     RestaurantInfo.SSH = scanResult.getContents();
     	   
     	     Context context = getApplicationContext();
     	     CharSequence text = scanResult.getContents();
@@ -53,10 +57,15 @@ public class MainActivity extends Activity {
 
     	     Toast toast = Toast.makeText(context, text, duration);
     	     toast.show();  
-    	     
+    	     Log.d(TAG,"WE BE HERE NOW!!!");
+    	     Intent tempIntent = new Intent();
+    	     tempIntent.setClass(getApplicationContext(), LoadingActivity.class);
+    	     Log.d(TAG,"Last line of code.tempIntent:"+tempIntent.toString());
+    	     startActivity(tempIntent);
+   
     	   }
     	  
-    	 }
+  }
 }
     	
 

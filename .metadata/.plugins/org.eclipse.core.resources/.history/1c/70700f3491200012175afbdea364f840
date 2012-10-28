@@ -1,0 +1,9 @@
+package com.example.cis;
+
+public class RestaurantInfo extends ProductInfo {
+	public static String SSH ="";
+	public static String restaurantName = "";
+	public static int numberOfProducts = "";
+	public static List<ProductInfo> productsList; 
+
+}

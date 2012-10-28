@@ -1,0 +1,9 @@
+package com.example.cis;
+
+public class ProductInfo {
+    public int Id ;
+    public int ProviderId ;
+    public String Name ;
+    public float Price ;
+		
+}

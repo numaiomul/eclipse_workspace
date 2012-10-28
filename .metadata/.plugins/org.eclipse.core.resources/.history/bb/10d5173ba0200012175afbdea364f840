@@ -1,0 +1,20 @@
+package com.example.cis;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class RestaurantActivity extends Activity {
+	@Override
+	public void onCreate(Bundle savedInstanceState ){
+		super.onCreate(savedInstanceState);
+	}
+	@Over
+	public void onPause(){
+		super.onPause();
+	}
+	
+	public void onResume(){
+		super.onResume();
+	}
+
+}

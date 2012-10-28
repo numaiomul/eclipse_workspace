@@ -1,0 +1,47 @@
+package com.example.cis;
+
+import java.io.IOException;
+
+import android.os.Bundle;
+import android.widget.Toast;
+import android.app.Activity;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.util.EntityUtils;
+
+public class LoadingActivity extends Activity{
+	private final String TAG = "<<LoadingActivity";
+	
+	public void OnCreate (Bundle savedInstanceState) throws JSONException{
+		super.onCreate(savedInstanceState);
+		 setContentView(R.layout.loading_screen);
+		 //Object progressBar = (Object) findViewById(R.id.progressBar);
+		 final JSONArray textToSend = new JSONArray(RestaurantInfo.SSH);
+		 // api/services/list/provider_id 
+			String url = "";
+			HttpResponse re;
+			String temp = new String();
+			try
+			{
+				Toast.makeText(this, "Going to HTTPPoster class now... Let's hope I don't die!", Toast.LENGTH_LONG).show();
+				re = HTTPClient.doPost(url, textToSend);
+				Toast.makeText(this, "Hello", Toast.LENGTH_LONG).show();
+				temp = EntityUtils.toString(re.getEntity());
+			}
+			catch (ClientProtocolException e)
+			{
+				e.printStackTrace();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+			if (temp.compareTo("SUCCESS")==0)
+			{
+			    Toast.makeText(this, "Sending complete!", Toast.LENGTH_LONG).show();
+			}
+	};
+	
+}

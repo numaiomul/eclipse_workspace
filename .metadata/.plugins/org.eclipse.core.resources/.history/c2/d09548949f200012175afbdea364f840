@@ -1,0 +1,12 @@
+package com.example.cis;
+
+public class ProductInfo {
+	/**
+	 * Product info class. Every product will have these variables.
+	 */
+    private int Id ;
+    private int ProviderId ;
+    private String Name ;
+    private float Price ;
+		
+}

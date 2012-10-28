@@ -1,0 +1,8 @@
+package com.example.cis;
+
+public class ProductInfo {
+		public String productName;
+		public String productPrice;
+		public String productImage;
+		
+}

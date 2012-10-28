@@ -1,0 +1,11 @@
+package com.example.cis;
+
+import java.util.List;
+
+public class RestaurantInfo extends ProductInfo {
+	public static String SSH = "";
+	public static String restaurantName = "";
+	public static int numberOfProducts = 0;
+	public static List<ProductInfo> productsList; 
+
+}

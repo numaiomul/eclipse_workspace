@@ -1,7 +1,0 @@
-package com.example.cis;
-
-import android.net.wifi.p2p.WifiP2pManager.ActionListener;
-
-public class ScanButton implements ActionListener {
-
-}

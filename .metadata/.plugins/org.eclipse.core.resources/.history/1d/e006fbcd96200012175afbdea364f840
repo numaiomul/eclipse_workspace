@@ -1,0 +1,20 @@
+package com.example.cis;
+
+import android.os.Bundle;
+import android.app.Activity;
+import org.json.JSONArray;
+import org.json.JSONException;
+
+public class LoadingActivity extends Activity{
+	private final String TAG = "<<LoadingActivity";
+	
+	public void OnCreate (Bundle savedInstanceState) throws JSONException{
+		super.onCreate(savedInstanceState);
+		 setContentView(R.layout.loading_screen);
+		 //Object progressBar = (Object) findViewById(R.id.progressBar);
+		 final JSONArray textToSend = new JSONArray(RestaurantInfo.SSH);
+		 // api/services/list/provider_id 
+	
+	};
+	
+}
